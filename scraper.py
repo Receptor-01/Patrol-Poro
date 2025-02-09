@@ -1,12 +1,3 @@
-#!/opt/homebrew/bin/python3
-"""
-File Name: scraper.py
-Location: /Users/andrewwhite/Desktop/Patrol-Poro/scraper.py
-Description: This script opens a Chrome browser using Selenium, navigates to a
-'calls for service' website, searches for 'Fallbrook' data, extracts rows from
-the results table, and saves them to a CSV file in the same directory.
-"""
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
