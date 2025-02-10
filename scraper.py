@@ -1,4 +1,3 @@
-
 import time
 import csv
 from selenium import webdriver
@@ -18,11 +17,22 @@ def scrape_calls_for_service():
       4) Waits for table rows to appear
       5) Scrapes Date/Time, Event Type, Approx. Location, & Event Number
       6) Saves results to /Users/andrewwhite/Desktop/calls_for_service_data.csv
+
+    According to the current site structure, the columns are (1..6):
+        1) Date/Time
+        2) Event Type
+        3) Approximate Location
+        4) Community
+        5) Service Area
+        6) Event Number
+
+    We only need columns #1, #2, #3, and #6 in the final CSV.
     """
+
     # ========================================================================
     # 1. SETUP THE CHROME DRIVER
     # ========================================================================
-    driver = webdriver.Chrome()  # Ensure chromedriver is correctly installed and in PATH
+    driver = webdriver.Chrome()  # Ensure chromedriver is installed and in PATH
 
     try:
         # ====================================================================
@@ -43,10 +53,10 @@ def scrape_calls_for_service():
         wait = WebDriverWait(driver, 30)  # Wait up to 30 seconds
         table_rows_locator = (By.CSS_SELECTOR, '#table tbody tr')
 
-        # Wait until at least 1 row is located in the table's <tbody>
+        # Wait until at least 1 row appears in the table's <tbody>
         rows = wait.until(EC.presence_of_all_elements_located(table_rows_locator))
 
-        # If no rows are found for some reason, handle it gracefully:
+        # If no rows are found, handle it gracefully
         if not rows:
             print("No rows found for 'Fallbrook' at this time.")
             return
@@ -68,32 +78,32 @@ def scrape_calls_for_service():
 
             # =============================================================
             # 6. LOOP THROUGH EACH ROW, EXTRACT TEXT, AND WRITE TO CSV
-            #    The table columns (1..7) are:
-            #       #1) Date/Time
-            #       #2) Call Status
-            #       #3) Event Type
-            #       #4) Approximate Location
-            #       #5) Community
-            #       #6) Service Area
-            #       #7) Event Number
             #
-            #    We only need columns #1, #3, #4, #7
+            #    The table columns (1..6) are:
+            #       #1) Date/Time
+            #       #2) Event Type
+            #       #3) Approx. Location
+            #       #4) Community
+            #       #5) Service Area
+            #       #6) Event Number
+            #
+            #    We only need columns #1, #2, #3, and #6.
             # =============================================================
             for row in rows:
                 cells = row.find_elements(By.CSS_SELECTOR, 'td')
-                
-                # Ensure we have at least 7 columns in this row
-                if len(cells) < 7:
+
+                # Ensure we have at least 6 columns
+                if len(cells) < 6:
                     print(f"Skipping a row with only {len(cells)} cells.")
                     continue
 
-                # Extract the 4 columns we care about
-                date_time       = cells[0].text.strip()  # Date/Time
-                event_type      = cells[2].text.strip()  # Event Type
-                approximate_loc = cells[3].text.strip()  # Approx. Location
-                event_number    = cells[6].text.strip()  # Event Number
+                # Extract the columns we care about
+                date_time       = cells[0].text.strip()  # Date/Time (#1)
+                event_type      = cells[1].text.strip()  # Event Type (#2)
+                approximate_loc = cells[2].text.strip()  # Approx. Location (#3)
+                event_number    = cells[5].text.strip()  # Event Number (#6)
 
-                # Print to console for debugging/verification
+                # Print to console for debugging
                 print(f"Date/Time: {date_time}, "
                       f"Event Type: {event_type}, "
                       f"Approx. Location: {approximate_loc}, "
