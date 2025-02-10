@@ -9,26 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 def scrape_calls_for_service():
-    """
-    This function:
-      1) Launches Chrome with Selenium
-      2) Navigates to https://callsforservice.sdsheriff.gov/
-      3) Searches for 'Fallbrook'
-      4) Waits for table rows to appear
-      5) Scrapes Date/Time, Event Type, Approx. Location, & Event Number
-      6) Saves results to /Users/andrewwhite/Desktop/calls_for_service_data.csv
-
-    According to the current site structure, the columns are (1..6):
-        1) Date/Time
-        2) Event Type
-        3) Approximate Location
-        4) Community
-        5) Service Area
-        6) Event Number
-
-    We only need columns #1, #2, #3, and #6 in the final CSV.
-    """
-
+ 
     # ========================================================================
     # 1. SETUP THE CHROME DRIVER
     # ========================================================================
@@ -41,7 +22,7 @@ def scrape_calls_for_service():
         driver.get('https://callsforservice.sdsheriff.gov/')
 
         # ====================================================================
-        # 3. LOCATE THE SEARCH BAR AND ENTER 'FALLBROOK'
+        # 3. LOCATE THE SEARCH BAR AND ENTER 'TARGET SEARCH CITY'
         # ====================================================================
         search_bar = driver.find_element(By.CSS_SELECTOR, 'input[type="search"]')
         search_bar.send_keys('Fallbrook')
@@ -133,3 +114,4 @@ def scrape_calls_for_service():
 # ========================================================================
 if __name__ == "__main__":
     scrape_calls_for_service()
+s
