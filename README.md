@@ -36,4 +36,26 @@ This script:
 
 ---
 
+## 1. Clone or Download the Repository
+
+   ```bash
+git clone https://github.com/YOUR-USERNAME/calls-for-service-scraper.git
+cd calls-for-service-scraper
+   ```
+
+## 2. Run the Script
+
+   ```bash
+python scrape_calls.py
+   ```
+
+## 3. Wait for the Script to Complete
+The script will:
+
+- Open a Chromium browser
+- Load the Calls for Service page
+- Select "All" entries
+- Search for "City" (be sure to specify in script)
+- Scrape available data
+- Save it to a CSV file on your desktop
 
