@@ -16,7 +16,7 @@
 ## 1. Clone or Download the Repository
 
    ```bash
-git clone https://github.com/YOUR-USERNAME/calls-for-service-scraper.git
+git clone https://github.com/Receptor-01/calls-for-service-scraper.git
 cd calls-for-service-scraper
    ```
 
