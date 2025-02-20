@@ -1,5 +1,5 @@
 
-# Patrol Poro
+<h1 align="center"> Patrol Poro </h1>
 
 ![alt text](PATROL-PORO-COVER-IMAGE.jpg)
 
