@@ -8,7 +8,7 @@
 
 ## Features
 ✅ **Automated Data Scraping** – No manual copying needed.  
-✅ **Filters for "Fallbrook"** – Only relevant incidents are extracted.  
+✅ **Filters by City** – Only relevant incidents are extracted.  
 ✅ **Saves to CSV** – Structured output for easy analysis.  
 ✅ **Runs in Headless Mode (Optional)** – Can be modified to run without opening a browser.  
 
