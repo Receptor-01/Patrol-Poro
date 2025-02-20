@@ -21,9 +21,6 @@
    git clone https://github.com/Receptor-01/Patrol-Poro.git
 
 
-
-
-
 ## Overview
 This script:
 - **Navigates to the "Calls for Service" website**:  
