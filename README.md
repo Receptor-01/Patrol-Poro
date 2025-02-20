@@ -13,14 +13,6 @@
 ✅ **Runs in Headless Mode (Optional)** – Can be modified to run without opening a browser.  
 
 
-
-## Setup
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Receptor-01/Patrol-Poro.git
-
-
 ## 1. Clone or Download the Repository
 
    ```bash
