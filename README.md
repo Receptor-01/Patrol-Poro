@@ -21,21 +21,6 @@
    git clone https://github.com/Receptor-01/Patrol-Poro.git
 
 
-## Overview
-This script:
-- **Navigates to the "Calls for Service" website**:  
-  [San Diego Sheriff's Department Calls for Service](https://callsforservice.sdsheriff.gov/)
-- **Filters incidents for specifed city**
-- **Scrapes data from the live table**, including:
-  - **Date/Time**
-  - **Event Type**
-  - **Approximate Location**
-  - **Event Number**
-- **Saves the results into a CSV file** on your desktop.
-
-
----
-
 ## 1. Clone or Download the Repository
 
    ```bash
