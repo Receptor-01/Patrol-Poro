@@ -25,7 +25,7 @@
 This script:
 - **Navigates to the "Calls for Service" website**:  
   [San Diego Sheriff's Department Calls for Service](https://callsforservice.sdsheriff.gov/)
-- **Filters incidents for "Fallbrook"**
+- **Filters incidents for specifed city**
 - **Scrapes data from the live table**, including:
   - **Date/Time**
   - **Event Type**
